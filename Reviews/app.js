@@ -57,10 +57,16 @@ const reviews = [
 
   prevBtn.addEventListener("click", function(){
     currentItem--;
+    if(currentItem < 0){
+      currentItem = reviews.length - 1;
+    }
     showPerson(currentItem);
   });
 
   nextBtn.addEventListener("click", function(){
     currentItem++;
+    if(currentItem > reviews.length - 1){
+      currentItem = 0;
+    }
     showPerson(currentItem);
   });
